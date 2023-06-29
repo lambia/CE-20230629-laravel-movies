@@ -19,19 +19,24 @@
         </div>
     </div>
     <div class="row g-4">
-        <div class="col">
-            @foreach ($movies as $movie)
-                <div class="movieCard card">
-                    <h2>{{$movie->title}} / {{$movie->original_title}}</h2>
-                    <span>{{$movie->vote}}</span>
+        @foreach ($movies as $movie)
+            <div class="col-3">
+                <div class="card">
                     @if ($movie->cover)
-                        <img src="{{$movie->cover}}" alt="{{$movie->title}}">
+                        <img class="card-img-top" src="{{$movie->cover}}" alt="{{$movie->title}}">
                     @else
-                        <img src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" alt="{{$movie->title}}">
+                        <img class="card-img-top" src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" alt="{{$movie->title}}">
                     @endif
+                    <div class="card-body">
+                        <h5 class="card-title">{{$movie->title}} ({{$movie->original_title}})</h5>
+                        <p class="card-text">
+                            Voto: {{$movie->vote}}<br>
+                            Data: {{$movie->date}}
+                        </p>
+                    </div>
                 </div>
-            @endforeach
-        </div>
+            </div>
+        @endforeach
     </div>
 
 </div>
