@@ -10,6 +10,21 @@
             </div>
         </div>
     </div>
+    <div class="row g-4">
+        <div class="col">
+            @foreach ($movies as $movie)
+                <div class="movieCard card">
+                    <h2>{{$movie->title}} / {{$movie->original_title}}</h2>
+                    <span>{{$movie->vote}}</span>
+                    @if ($movie->cover)
+                        <img src="{{$movie->cover}}" alt="{{$movie->title}}">
+                    @else
+                        <img src="https://t3.ftcdn.net/jpg/02/48/42/64/360_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" alt="{{$movie->title}}">
+                    @endif
+                </div>
+            @endforeach
+        </div>
+    </div>
 
 </div>
 @endsection
