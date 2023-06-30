@@ -4,22 +4,7 @@
 <div class="container my-3">
     <h1>Welcome Page</h1>
     <div class="row g-4">
-        <div class="col">
-            <div>
-                <pre>
-                    {{-- {{ var_dump($movies);  }}
-                    {{ print_r($movies);  }}
-                    {{ ddd('$movies);  }} --}}
-
-                    {{-- @dump("movies")
-                    @dd("movies") --}}
-                </pre>
-                {{-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, delectus ad esse illum omnis earum eligendi sint a minus quasi, inventore nulla autem. Maxime voluptatem eligendi veniam voluptates. Soluta, sunt!</p> --}}
-            </div>
-        </div>
-    </div>
-    <div class="row g-4">
-        @foreach ($movies as $movie)
+        @forelse ($movies as $movie)
             <div class="col-3">
                 <div class="card">
                     @if ($movie->cover)
@@ -36,7 +21,11 @@
                     </div>
                 </div>
             </div>
-        @endforeach
+        @empty
+            <div class="col-12">
+                Nessun dato trovato. Sicuro di aver importato il DB?
+            </div>
+        @endforelse
     </div>
 
 </div>
