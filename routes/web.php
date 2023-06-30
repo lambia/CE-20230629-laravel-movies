@@ -15,3 +15,4 @@ use App\Http\Controllers\Guest\PageController;
 */
 
 Route::get('/', [PageController::class, 'index']);
+// Route::get('/other', [PageController::class, 'other']);

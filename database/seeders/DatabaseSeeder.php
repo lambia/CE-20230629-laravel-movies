@@ -20,5 +20,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+
+        //Permette di lanciare il comando
+        //php artisan db:seed
+        //senza specificare --class=NomeClasseSeeder.php
+        //Esegue tutti i seeder chiamati qui sotto (per ora solo uno)
+        $this->call(MoviesTableSeeder::class);
     }
 }

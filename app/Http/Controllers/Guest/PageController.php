@@ -37,4 +37,11 @@ class PageController extends Controller
 
         return view('welcome', compact("movies") );
     }
+    
+    // public function other() {
+
+    //     $movies = Movie::all(["title", "original_title", "vote", "cover"]);
+
+    //     return view('welcome', compact("movies") );
+    // }
 }
