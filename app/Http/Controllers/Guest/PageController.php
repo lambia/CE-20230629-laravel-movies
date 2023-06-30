@@ -33,7 +33,9 @@ class PageController extends Controller
         // $starwars->vote = "8";
         // $starwars->save();
 
-        $movies = Movie::all(["title", "original_title", "vote", "cover"]);
+        // $movies = Movie::all(["title", "original_title", "vote", "cover"]);
+        
+        $movies = Movie::all();
 
         return view('welcome', compact("movies") );
     }
